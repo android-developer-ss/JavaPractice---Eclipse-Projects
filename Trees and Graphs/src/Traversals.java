@@ -3,9 +3,9 @@ public class Traversals {
 
 	public static void main(String[] args) {
 		Node head = new Node(0);
-		initializeTree(head);
+		head = initializeTree(head);
 
-		//preOrderTraversal(head);
+		// preOrderTraversal(head);
 		inOrderTraversal(head);
 	}
 
@@ -30,21 +30,23 @@ public class Traversals {
 
 	}
 
-	private static void initializeTree(Node head) {
+	private static Node initializeTree(Node head) {
 		int[] numArray = { 0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
-
-		for (int i = 0; i < numArray.length - 1;) {
-			head =  new Node(i++);
-			Node nextNodeLeft = new Node(numArray[i++]);
-			Node nextNodeRight = new Node(numArray[i++]);
-			head.left = nextNodeLeft;
-			head.right = nextNodeRight;
+Node headToReturn = head;
+		for (int i = 0; i < numArray.length - 1;i++) {
+			if (head == null)
+				head = new Node(i);
+//			Node nextNodeLeft = new Node(numArray[i++]);
+//			Node nextNodeRight = new Node(numArray[i++]);
+//			head.left = nextNodeLeft;
+//			head.right = nextNodeRight;
 
 			if (head.left == null && head.right == null)
 				head = head.left;
 			else if (head.left != null && head.right == null)
 				head = head.right;
 		}
+		return headToReturn;
 	}
 
 }
