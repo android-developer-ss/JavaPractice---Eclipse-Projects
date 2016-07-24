@@ -18,4 +18,11 @@ public class MyStack {
 		} else
 			return null;
 	}
+
+	public boolean isEmpty() {
+		if (myStack.size() > 0)
+			return false;
+		else
+			return true;
+	}
 }

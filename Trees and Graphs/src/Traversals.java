@@ -8,7 +8,8 @@ public class Traversals {
 		Node head = new Node(0);
 		head = initializeTree(head);
 
-		preOrderTraversal(head);
+		(new BFSandDFS()).breadthFirstSearch(head);
+//		preOrderTraversal(head);
 
 	}
 
